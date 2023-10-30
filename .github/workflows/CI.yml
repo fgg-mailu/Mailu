@@ -35,5 +35,19 @@ jobs:
         env:
           MAILU_VERSION: ${{ env.BRANCH }}
         run: docker-compose -f tests/build.yml build
-      - name: Push images
-        run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/admin ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/clamav ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/docs ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/dovecot ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/fetchmail ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/nginx ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/none ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/postfix ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/postgresql ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/radicale ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/rainloop ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/roundcube ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/rspamd ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/setup ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/traefik-certdumper ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/unbound
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/admin:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/clamav:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/docs:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/dovecot:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/fetchmail:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/nginx:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/none:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/postfix:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/postgresql:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/radicale:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/rainloop:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/roundcube:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/rspamd:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/setup:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/traefik-certdumper:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/unbound:${MAILU_VERSION}
