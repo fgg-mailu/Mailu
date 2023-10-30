@@ -27,7 +27,7 @@ COPY requirements-prod.txt requirements.txt
 RUN apk add --no-cache openssl curl postgresql-libs mariadb-connector-c \
   && apk add --no-cache --virtual build-dep \
   openssl-dev libffi-dev python3-dev build-base postgresql-dev mariadb-connector-c-dev cargo \
-  && pip3 install bdist_wheel \
+  && pip3 install wheel \
   && pip3 install -r requirements.txt --no-build-isolation \
   && apk del --no-cache build-dep
 
