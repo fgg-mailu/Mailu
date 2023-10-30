@@ -35,19 +35,19 @@ jobs:
         env:
           MAILU_VERSION: ${{ env.BRANCH }}
         run: docker-compose -f tests/build.yml build
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/admin:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/clamav:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/docs:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/dovecot:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/fetchmail:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/nginx:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/none:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/postfix:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/postgresql:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/radicale:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/rainloop:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/roundcube:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/rspamd:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/setup:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/traefik-certdumper:${MAILU_VERSION}
-      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/unbound:${MAILU_VERSION}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/admin:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/clamav:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/docs:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/dovecot:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/fetchmail:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/nginx:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/none:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/postfix:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/postgresql:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/radicale:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/rainloop:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/roundcube:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/rspamd:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/setup:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/traefik-certdumper:${{ env.BRANCH }}
+      - run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/unbound:${{ env.BRANCH }}
