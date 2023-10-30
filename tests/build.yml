@@ -3,69 +3,69 @@ version: '3'
 services:
 
   front:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}nginx:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/nginx:${MAILU_VERSION}
     build: ../core/nginx
 
   resolver:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}unbound:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/unbound:${MAILU_VERSION}
     build: ../optional/unbound
 
   imap:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}dovecot:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/dovecot:${MAILU_VERSION}
     build: ../core/dovecot
 
   smtp:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}postfix:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/postfix:${MAILU_VERSION}
     build: ../core/postfix
 
   antispam:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}rspamd:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/rspamd:${MAILU_VERSION}
     build: ../core/rspamd
 
   antivirus:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}clamav:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/clamav:${MAILU_VERSION}
     build: ../optional/clamav
 
   webdav:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}radicale:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/radicale:${MAILU_VERSION}
     build: ../optional/radicale
 
   traefik-certdumper:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}traefik-certdumper:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/traefik-certdumper:${MAILU_VERSION}
     build: ../optional/traefik-certdumper
 
   admin:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}admin:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/admin:${MAILU_VERSION}
     build: ../core/admin
 
   postgresql:
-    image: ${DOCKER_ORG:-mailu}/postgresql:${MAILU_VERSION:-local}
+    image: ${DOCKER_ORG:-mailu}/postgresql:${MAILU_VERSION}
     build: ../optional/postgresql
 
   roundcube:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}roundcube:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/roundcube:${MAILU_VERSION}
     build: ../webmails/roundcube
 
   rainloop:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}rainloop:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/rainloop:${MAILU_VERSION}
     build: ../webmails/rainloop
 
   fetchmail:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}fetchmail:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/fetchmail:${MAILU_VERSION}
     build: ../optional/fetchmail
 
   none:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}none:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/none:${MAILU_VERSION}
     build: ../core/none
 
   docs:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}docs:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/docs:${MAILU_VERSION}
     build:
       context: ../docs
       args:
-        version: ${MAILU_VERSION:-local}
+        version: ${MAILU_VERSION}
 
   setup:
-    image: ${DOCKER_ORG:-mailu}/${DOCKER_PREFIX:-}setup:${MAILU_VERSION:-local}
+    image: ${REGISTRY}/${IMAGE_NAME}/setup:${MAILU_VERSION}
     build: ../setup
 
