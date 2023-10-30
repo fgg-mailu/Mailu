@@ -39,7 +39,7 @@ services:
     build: ../core/admin
 
   postgresql:
-    image: ${DOCKER_ORG:-mailu}/postgresql:${MAILU_VERSION}
+    image: ${REGISTRY}/${IMAGE_NAME}/postgresql:${MAILU_VERSION}
     build: ../optional/postgresql
 
   roundcube:
